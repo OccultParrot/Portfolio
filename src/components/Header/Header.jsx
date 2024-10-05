@@ -6,9 +6,9 @@ function Header(props) {
       <h1>Thomas Stemler</h1>
       <nav>
         <ul>
-          {props.navItems.map((item) => (
+          {props.pages.map((page) => (
             <li>
-              <Link to="/">{item.name}</Link>
+              <Link to={page.path}>{page.name}</Link>
             </li>
           ))}
         </ul>
