@@ -8,29 +8,34 @@ import Footer from "./components/Footer/Footer";
 
 // Importing pages
 import Error from "./pages/Error/Error";
-import Home from "./pages/Home/Home";
 import AboutPage from "./pages/About/About";
-import TestPage from "./pages/Test";
-
+import ContactPage from "./pages/Contact/Contact";
+import PortfolioPage from "./pages/Portfolio/Portfolio";
+import ResumePage from "./pages/Resume/Resume";
+ 
 // Array of pages. When you want to add a page to the website, add it here!
 const pages = [
   {
-    name: "Home",
+    name: "About Me",
     path: "/",
-    element: <Home />,
+    element: <AboutPage />,
     isIndex: true,
   },
   {
-    name: "About Me",
-    path: "about",
-    element: <AboutPage />,
+    name: "Portfolio",
+    path: "portfolio",
+    element: <PortfolioPage />,
     isIndex: false,
   },
   {
-    name: "Test [Click Me!]",
-    path: "test",
-    element: <TestPage />,
-    isIndex: false,
+    name: "Contact Me",
+    path: "contact",
+    element: <ContactPage />,
+  },
+  {
+    name: "Resume",
+    path: "resume",
+    element: <ResumePage />,
   },
 ];
 

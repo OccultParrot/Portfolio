@@ -1,0 +1,22 @@
+.header {
+    background-color: antiquewhite;
+    display: flex;
+}
+
+.header ul {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    
+}
+
+.header ul li{
+    margin: 5px;
+    flex: 1 0 100px;
+    list-style: none;
+}
+
+.header ul li a {
+    text-decoration: none;
+    border-bottom: 5px solid #444;
+}

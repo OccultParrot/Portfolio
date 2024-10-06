@@ -1,8 +1,10 @@
+import "./Header.css"
+
 import { Link } from "react-router-dom";
 
 function Header(props) {
   return (
-    <section>
+    <section className="header">
       <h1>Thomas Stemler</h1>
       <nav>
         <ul>
