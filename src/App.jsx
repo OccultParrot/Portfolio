@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import "./App.css";
+
+import "./output.css"
 
 // Importing Header and Footer
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // Importing pages
-import Error from "./pages/Error/Error";
-import AboutPage from "./pages/About/About";
-import ContactPage from "./pages/Contact/Contact";
-import PortfolioPage from "./pages/Portfolio/Portfolio";
-import ResumePage from "./pages/Resume/Resume";
- 
+import Error from "./pages/Error";
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/Contact";
+import PortfolioPage from "./pages/Portfolio";
+import ResumePage from "./pages/Resume";
+
 // Array of pages. When you want to add a page to the website, add it here!
 const pages = [
   {
@@ -41,15 +42,16 @@ const pages = [
 
 function Layout() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header pages={pages} />
-      <main>
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />
     </div>
   );
 }
+
 
 function App() {
   return (
