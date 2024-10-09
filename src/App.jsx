@@ -1,42 +1,52 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
-import "./output.css"
+import './output.css';
 
 // Importing Header and Footer
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 // Importing pages
-import Error from "./pages/Error";
-import AboutPage from "./pages/About";
-import ContactPage from "./pages/Contact";
-import PortfolioPage from "./pages/Portfolio";
-import ResumePage from "./pages/Resume";
+import Error from './pages/Error';
+import AboutPage from './pages/About';
+import ContactPage from './pages/Contact';
+import PortfolioPage from './pages/Portfolio';
 
 // Array of pages. When you want to add a page to the website, add it here!
+/**
+ * Pages MUST follow the following guidelines:
+ * name: string
+ * path: string
+ * element: ReactElement
+ * isIndex?: boolean
+ * redirect?: string
+ */
 const pages = [
   {
-    name: "About Me",
-    path: "/",
+    name: 'About Me',
+    path: '/',
     element: <AboutPage />,
     isIndex: true,
   },
   {
-    name: "Portfolio",
-    path: "portfolio",
+    name: 'Portfolio',
+    path: 'portfolio',
     element: <PortfolioPage />,
-    isIndex: false,
   },
   {
-    name: "Contact Me",
-    path: "contact",
+    name: 'Contact Me',
+    path: 'contact',
     element: <ContactPage />,
   },
   {
-    name: "Resume",
-    path: "resume",
-    element: <ResumePage />,
+    name: 'Resume',
+    // TODO: Make Resume redirect to dropbox share link of resume
+    path: 'https://google.com',
+    // Undefined because there is no resume page
+    element: undefined,
+    // redirecting to '_blank' will make it open in a new page
+    redirect: '_blank',
   },
 ];
 
@@ -52,7 +62,6 @@ function Layout() {
   );
 }
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -64,7 +73,7 @@ function App() {
               <Route key={page.path} index element={page.element} />
             ) : (
               <Route key={page.path} path={page.path} element={page.element} />
-            )
+            ),
           )}
           <Route path="*" element={<Error />} />
         </Route>

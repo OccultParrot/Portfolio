@@ -1,25 +1,25 @@
-import GithubLogo from "../assets/icons8-github.svg";
-import LinkedInLogo from "../assets/icons8-linked-in.svg";
-import DevLogo from "../assets/dev-icon.svg";
+import GithubLogo from '../assets/icons8-github.svg';
+import LinkedInLogo from '../assets/icons8-linked-in.svg';
+import DevLogo from '../assets/dev-icon.svg';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   const socialLinks = [
     {
-      name: "GitHub",
+      name: 'GitHub',
       icon: GithubLogo,
-      url: "https://github.com/OccultParrot",
+      url: 'https://github.com/OccultParrot',
     },
     {
-      name: "LinkedIn",
+      name: 'LinkedIn',
       icon: LinkedInLogo,
-      url: "https://www.linkedin.com/in/thomas-stemler-468094299/",
+      url: 'https://www.linkedin.com/in/thomas-stemler-468094299/',
     },
     {
-      name: "Dev.to",
+      name: 'Dev.to',
       icon: DevLogo,
-      url: "https://dev.to/occultparrot",
+      url: 'https://dev.to/occultparrot',
     },
   ];
 
@@ -38,8 +38,8 @@ function Footer() {
               >
                 <span className="sr-only">{social.name}</span>
                 <div className="relative">
-                  <img 
-                    src={social.icon} 
+                  <img
+                    src={social.icon}
                     alt={social.name}
                     className="h-8 w-8 transform group-hover:scale-110 transition-transform"
                   />
@@ -50,14 +50,12 @@ function Footer() {
               </a>
             ))}
           </div>
-          
+
           <div className="text-center space-y-4">
             <p className="text-gray-300 text-sm">
               © {currentYear} Thomas Stemler. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm">
-              Full Stack Developer
-            </p>
+            <p className="text-gray-400 text-sm">Full Stack Developer</p>
           </div>
         </div>
       </div>

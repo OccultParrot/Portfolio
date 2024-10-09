@@ -1,72 +1,44 @@
-import ProjectCard from "../components/Card"
+import ProjectCard from '../components/Card';
+import BasicECS from '../assets/BasicECS.png';
+import Movte from '../assets/Movte.png';
+import WeatherDashboard from '../assets/WeatherDashboard.png';
 
 function PortfolioPage() {
   /**
    * Contents must follow the pattern:
-   * image,
-   * name,
-   * description,
-   * link,
-   * isFeatured
+   * image: string,
+   * name: string,
+   * description: string,
+   * githubLink: string,
+   * deployedLink: string
+   * isFeatured: boolean
    */
   const projectArray = [
+    // TODO: Add Projects
     {
-      name: "Read This",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://google.com",
-      image: "https://picsum.photos/300",
+      image: BasicECS,
+      name: 'Basic ECS',
+      description:
+        'This is a simple entity component system architecture I wrote in C# using the MonoGame Framework.',
+      githubLink: 'https://github.com/OccultParrot/Basic-ECS',
       isFeatured: true,
     },
     {
-      name: "Hoof Track",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://HoofTrack.com",
-      image: "https://picsum.photos/300",
-      isFeatured: true,
+      image: Movte,
+      name: 'Movte',
+      description:
+        'This is my first web development project I ever did with a group! Its a website where you put add movies that people want to watch, then you pass the device around and have people vote on what movies they want to watch.',
+      githubLink: 'https://github.com/OccultParrot/movie-suggestion-voting',
+      deployedLink: 'https://occultparrot.github.io/movie-suggestion-voting/',
     },
     {
-      name: "Read This",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://google.com",
-      image: "https://picsum.photos/300",
-      isFeatured: false,
+      image: WeatherDashboard,
+      name: 'WeatherDashboard',
+      description:
+        'This website displays the current weather and the future weather for any city',
+      githubLink: 'https://github.com/WeatherDashboard',
+      deployedLink: 'https://weather-dashboard-g6mh.onrender.com',
     },
-    {
-      name: "Hoof Track",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://HoofTrack.com",
-      image: "https://picsum.photos/300",
-      isFeatured: false,
-    },
-    {
-      name: "Read This",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://google.com",
-      image: "https://picsum.photos/300",
-      isFeatured: false,
-    },
-    {
-      name: "Hoof Track",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://HoofTrack.com",
-      image: "https://picsum.photos/300",
-      isFeatured: false,
-    },
-    {
-      name: "Read This",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://google.com",
-      image: "https://picsum.photos/300",
-      isFeatured: false,
-    },
-    {
-      name: "Hoof Track",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique voluptates, illo magnam, dolore quae fuga optio adipisci facilis ut qui, ducimus impedit non! Nihil quas reiciendis enim atque inventore?",
-      link: "https://HoofTrack.com",
-      image: "https://picsum.photos/300",
-      isFeatured: false,
-    },
-    // Add more projects as needed
   ];
 
   const featuredProjects = projectArray.filter((project) => project.isFeatured);
