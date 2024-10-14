@@ -21,7 +21,6 @@ function Footer() {
       icon: DevLogo,
       url: 'https://dev.to/occultparrot',
     },
-
   ];
 
   return (

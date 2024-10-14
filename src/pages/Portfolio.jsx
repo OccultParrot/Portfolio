@@ -2,6 +2,9 @@ import ProjectCard from '../components/Card';
 import BasicECS from '../assets/BasicECS.png';
 import Movte from '../assets/Movte.png';
 import WeatherDashboard from '../assets/WeatherDashboard.png';
+import SylvanExodus from '../assets/SylvanExodus.png';
+import EmployeeTracker from '../assets/EmployeeTracker.png';
+import StimuliTesting from '../assets/StimuliTesting.jpg';
 
 function PortfolioPage() {
   /**
@@ -33,12 +36,33 @@ function PortfolioPage() {
     },
     {
       image: WeatherDashboard,
-      name: 'WeatherDashboard',
+      name: 'Weather Dashboard',
       description:
         'This website displays the current weather and the future weather for any city',
       githubLink: 'https://github.com/WeatherDashboard',
       deployedLink: 'https://weather-dashboard-g6mh.onrender.com',
     },
+    {
+      image: SylvanExodus,
+      name: 'Sylvan Exodus',
+      description:
+        'A work in progress game. The goal of development is write in a modular style in order to make it super easy to add new stuff.',
+      githubLink: 'https://github.com/OccultParrot/SylvanExodus/blob/main/Documentation/Game-Mechanics.md',
+    },
+    {
+      image: EmployeeTracker,
+      name: 'Employee Tracker',
+      description:
+        'A console program to help track employees in a database.',
+      githubLink: 'https://github.com/OccultParrot/Employee-Tracker',
+    },
+    {
+      image: StimuliTesting,
+      name: 'Stimuli Testing (PBASIC)',
+      description:
+        'The PBASIC code written for the study I preformed during my internship with Missouri S & T.',
+      githubLink: 'https://github.com/OccultParrot/StimuliTesting',
+    }
   ];
 
   const featuredProjects = projectArray.filter((project) => project.isFeatured);

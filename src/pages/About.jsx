@@ -1,6 +1,4 @@
-import React from 'react';
-
-import Logo from '../assets/Logo.jpg';
+import Logo from '../assets/Logo.png';
 
 function AboutPage() {
   return (
@@ -35,6 +33,7 @@ function AboutPage() {
                 'React',
                 'Node.js',
                 'TypeScript',
+                'Being Cool',
                 'PostgreSQL',
                 'Python',
                 'C#',
