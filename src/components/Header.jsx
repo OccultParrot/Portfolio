@@ -33,6 +33,16 @@ function Header({ pages }) {
                   </Link>
                 </li>
               ))}
+              <li key="resume">
+                <a
+                  href="/Resume.pdf" download
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    'text-gray-600 hover:text-blue-600'
+                  }`}
+                >
+                  Resume
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
