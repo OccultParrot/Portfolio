@@ -38,15 +38,6 @@ const pages = [
     path: 'contact',
     element: <ContactPage />,
   },
-  {
-    name: 'Resume',
-    // TODO: Make Resume redirect to dropbox share link of resume
-    path: 'https://google.com',
-    // Undefined because there is no resume page
-    element: undefined,
-    // redirecting to '_blank' will make it open in a new page
-    redirect: '_blank',
-  },
 ];
 
 function Layout() {
