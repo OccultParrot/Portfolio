@@ -2,6 +2,8 @@ import GithubLogo from '../assets/icons8-github.svg';
 import LinkedInLogo from '../assets/icons8-linked-in.svg';
 import DevLogo from '../assets/dev-icon.svg';
 
+import { Link } from 'react-router-dom';
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -56,6 +58,7 @@ function Footer() {
               © {currentYear} Thomas Stemler. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm">Full Stack Developer</p>
+            <Link to='https://github.com/OccultParrot/Portfolio' className='text-gray-400 text-sm hover:text-blue-600' target='_blank'>Link to github repository</Link>
           </div>
         </div>
       </div>
