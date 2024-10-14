@@ -11,9 +11,7 @@ function Header({ pages }) {
             <Link
               to="/"
               className={`text-2xl font-bold ${
-                location.pathname === '/'
-                  ? 'text-blue-600'
-                  : 'text-gray-800 hover:text-blue-600'
+                'text-gray-800 hover:text-blue-600'
               } transition-colors`}
             >
               Thomas Stemler
@@ -27,9 +25,7 @@ function Header({ pages }) {
                   <Link
                     to={page.path}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      location.pathname === page.path
-                        ? 'text-blue-600 bg-blue-50'
-                        : 'text-gray-600 hover:text-blue-600'
+                      'text-gray-600 hover:text-blue-600'
                     }`}
                     target={page.redirect}
                   >
