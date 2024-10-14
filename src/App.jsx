@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
-import './output.css';
+import './index.css';
 
 // Importing Header and Footer
 import Header from './components/Header';
