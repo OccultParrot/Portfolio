@@ -2,6 +2,8 @@
 
 ![MIT badge](https://img.shields.io/badge/license-MIT-green)
 
+[!example image](public/example.png)
+
 A portfolio for me to showcase my abilities
 
 [Link to Website](https://thomas-stemler-portfolio.netlify.app/)
