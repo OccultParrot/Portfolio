@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import './index.css';
 
 // Importing Header and Footer
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 // Importing pages
 import Error from './pages/Error';

@@ -1,6 +1,6 @@
-import GithubLogo from '../assets/icons8-github.svg';
-import LinkedInLogo from '../assets/icons8-linked-in.svg';
-import DevLogo from '../assets/dev-icon.svg';
+import GithubLogo from '../../assets/icons8-github.svg';
+import LinkedInLogo from '../../assets/icons8-linked-in.svg';
+import DevLogo from '../../assets/dev-icon.svg';
 
 import { Link } from 'react-router-dom';
 

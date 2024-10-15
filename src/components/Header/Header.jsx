@@ -1,12 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
+import { CSSProperties } from 'react';
+
+import './Header.css'
 
 function Header({ pages }) {
-  const location = useLocation();
 
   return (
     <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 header">
           <div className="flex-shrink-0">
             <Link
               to="/"
@@ -24,7 +26,7 @@ function Header({ pages }) {
                 <li key={page.path}>
                   <Link
                     to={page.path}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`nav-list-item px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       'text-gray-600 hover:text-blue-600'
                     }`}
                     target={page.redirect}
@@ -36,7 +38,7 @@ function Header({ pages }) {
               <li key="resume">
                 <a
                   href="/Resume.pdf" download
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`nav-list-item px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     'text-gray-600 hover:text-blue-600'
                   }`}
                 >
