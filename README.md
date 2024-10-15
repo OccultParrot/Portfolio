@@ -2,7 +2,7 @@
 
 ![MIT badge](https://img.shields.io/badge/license-MIT-green)
 
-[!example image](public/example.png)
+![example image](public/example.png)
 
 A portfolio for me to showcase my abilities
 
