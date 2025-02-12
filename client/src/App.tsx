@@ -52,7 +52,7 @@ const pages: Array<IPageProps> = [
  * @returns {ReactElement} A div containing the header, main content area with Outlet, and footer
  * @author Thomas Stemler (OccultParrot)
  */
-function Layout() {
+function Layout(): ReactElement {
 
   return (
     <div>
@@ -116,7 +116,7 @@ function CreateRoute(props: IPageProps): ReactElement {
  *   - Dynamic routes from pages array
  *   - "*" -> Error page for unmatched routes
  */
-export default function App() {
+export default function App(): ReactElement {
   return (
     <BrowserRouter>
       <Routes>
