@@ -132,7 +132,7 @@ function Layout(): ReactElement {
     <div className="min-h-screen flex flex-col">
       <Header pages={pages.filter((page) => {return !page.isHidden})} rootPage={pages[0]}/>
 
-      <main className="grow">
+      <main className="grow bg-white">
         <Outlet/>
       </main>
       <Footer socials={socials}/>
