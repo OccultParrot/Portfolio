@@ -2,7 +2,7 @@
 export default function Home() {
   return (
     <div>
-      <p>TEMP</p>
+      <p>Home</p>
     </div>
   )
 }

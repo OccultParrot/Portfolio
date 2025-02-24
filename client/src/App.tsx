@@ -1,123 +1,10 @@
 import {BrowserRouter, Outlet, Route, Routes} from 'react-router-dom';
 import {ReactElement} from "react";
-
-import DevLogo from "./assets/dev-icon.svg"
-import LinkedInLogo from "./assets/linkedin.svg"
-import GitHubLogo from "./assets/github.svg"
-
-import Home from "./pages/Home";
-import Error from "./pages/Error.tsx";
-import Header from "./components/layout/Header.tsx";
-import Footer from "./components/layout/Footer.tsx";
-
-/**
- * Interface defining the properties for creating routes in the application.
- * Used by the CreateRoute function to generate route elements recursively.
- *
- * @interface IPageProps
- * @property {string} name - Used for the header menu to travel to that page
- * @property {string} path - The URL path segment for this route
- * @property {ReactElement} element - The React component to render at this route
- * @property {IPageProps[]} [children] - Optional nested routes under this route
- */
-export interface IPageProps {
-  name: string;
-  path: string;
-  isHidden?: boolean;
-  element: ReactElement;
-  children?: IPageProps[];
-}
-
-/**
- * Interface defining the properties for creating links to my social medias in the footer
- *
- * @interface ISocialProps
- * @property {string} name - Used for the text that appears when you hover over the social medias icon
- * @property {string} icon - The SVG that is the social medias logo
- * @property {string} href - The link that the user gets redirected to when they click on the social media icon
- */
-export interface ISocialProps{
-  name: string;
-  icon: string;
-  href: string;
-}
-/**
- * Configuration array defining all application routes.
- * Each entry maps to a route in the application, along with getting a link to the path in the nav bar if marked false for isHidden
- *
- * Also, the first item in the array is considered the "root" and the title will redirect to it.
- * @type {Array<IPageProps>}
- * @example
- * {
- *   name: "home",
- *   path: "home",
- *   isHidden?: false
- *   element: <Home/>,
- *   children: [] // optional nested routes
- * }
- */
-const pages: Array<IPageProps> = [
-  {
-    name: "Home",
-    path: "",
-    isHidden: true,
-    element: <Home/>
-  },
-  {
-    name: "Projects",
-    path: "projects",
-    element: <Home/>,
-  },
-  {
-    name: "About Me",
-    path: "about",
-    element: <Home/>,
-  },
-  {
-    name: "Blog",
-    path: "blog",
-    element: <Home/>,
-  },
-  {
-    name: "Resume",
-    path: "resume",
-    element: <Home />
-  }
-];
-
-/**
- * Configuration array defining all social media accounts connected to me.
- * Each entry maps to a link in the footer
- *
- * @type {Array<ISocialProps>}
- * @example
- * // Earlier in the imports
- * import GitHubLogo from "./assets/github.svg"
- *
- * // Entry in array
- * {
- *   name: "GitHub",
- *   icon: GitHubLogo,
- *   href: "https://github.com/OccultParrot"
- * }
- */
-const socials: Array<ISocialProps> = [
-  {
-    name: "GitHub",
-    icon: GitHubLogo,
-    href: "https://github.com/OccultParrot"
-  },
-  {
-    name: "LinkedIn",
-    icon: LinkedInLogo,
-    href: "https://www.linkedin.com/in/thomas-stemler-468094299/"
-  },
-  {
-    name: "Dev.to",
-    icon: DevLogo,
-    href: "https://dev.to/occultparrot"
-  }
-]
+import {pages, socials} from './config.tsx';
+import {IPageProps} from './types.ts';
+import ErrorPage from "./pages/ErrorPage.tsx";
+import HeaderSection from "./components/layout/HeaderSection.tsx";
+import FooterSection from "./components/layout/FooterSection.tsx";
 
 /**
  * Layout component that wraps all routes with common header and footer elements.
@@ -130,12 +17,12 @@ function Layout(): ReactElement {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header pages={pages.filter((page) => {return !page.isHidden})} rootPage={pages[0]}/>
+      <HeaderSection pages={pages.filter((page) => {return !page.isHidden})} rootPage={pages[0]}/>
 
       <main className="grow bg-white">
         <Outlet/>
       </main>
-      <Footer socials={socials}/>
+      <FooterSection socials={socials}/>
     </div>
   );
 }
@@ -154,8 +41,6 @@ function Layout(): ReactElement {
  @author Thomas Stemler (OccultParrot)
  **/
 function CreateRoute(props: IPageProps): ReactElement {
-  console.warn(`Creating route to page ${props.name} at path ${props.path}, with ${props.children?.length ?? 0} children`); // For testing. TODO: Comment out in final product
-
   // If the route has NO children,
   if (!props.children)
     // Return a Route element
@@ -187,7 +72,7 @@ function CreateRoute(props: IPageProps): ReactElement {
  * - "/" (Layout wrapper)
  *   - "/" (index) -> Landing page
  *   - Dynamic routes from pages array
- *   - "*" -> Error page for unmatched routes
+ *   - "*" -> ErrorPage page for unmatched routes
  */
 export default function App(): ReactElement {
   return (
@@ -201,7 +86,7 @@ export default function App(): ReactElement {
           {pages.slice(1).map((pageProps: IPageProps) => CreateRoute(pageProps))}
 
           {/* The error page gets served if the path the user goes to does not exist. */}
-          <Route path="*" element={<Error/>}/>
+          <Route path="*" element={<ErrorPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
