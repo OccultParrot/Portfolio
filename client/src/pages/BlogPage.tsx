@@ -1,5 +1,5 @@
 
-
+// TODO: Finish the blog page stuff.
 export default function BlogPage() {
   return (
     <div>

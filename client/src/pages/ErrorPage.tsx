@@ -1,4 +1,4 @@
-// The home page, where most information is shown.
+// TODO: Finish the error page stuff.
 export default function ErrorPage() {
   return (
     <div>

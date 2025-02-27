@@ -1,3 +1,4 @@
+// TODO: Finish the resume page stuff.
 export default function ResumePage() {
   return (
     <div>
