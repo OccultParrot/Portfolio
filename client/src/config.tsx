@@ -6,7 +6,11 @@ import {ISocialProps, IPageProps} from './types.ts';
 
 import HomePage from './pages/HomePage.tsx';
 import ProjectsPage from './pages/ProjectsPage.tsx';
-import AboutPage from './pages/AboutPage.tsx';
+
+import AboutPage from './pages/AboutPage/AboutPage.tsx';
+import HobbiesPage from './pages/AboutPage/HobbiesPage.tsx';
+import MusicPage from './pages/AboutPage/MusicPage.tsx';
+
 import BlogPage from './pages/BlogPage.tsx';
 import ResumePage from './pages/ResumePage.tsx';
 
@@ -70,13 +74,6 @@ export const pages: Array<IPageProps> = [
     name: "Projects",
     path: "projects",
     element: <ProjectsPage/>,
-    children: [
-      {
-        name: "Blog",
-        path: "blog",
-        element: <BlogPage/>,
-      },
-    ]
   },
   {
     name: "About Me",
@@ -86,7 +83,12 @@ export const pages: Array<IPageProps> = [
       {
         name: "Hobbies",
         path: "hobbies",
-        element: <AboutPage />
+        element: <HobbiesPage />
+      },
+      {
+        name: "Music",
+        path: "music",
+        element: <MusicPage />
       }
     ]
   },
