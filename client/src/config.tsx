@@ -70,11 +70,25 @@ export const pages: Array<IPageProps> = [
     name: "Projects",
     path: "projects",
     element: <ProjectsPage/>,
+    children: [
+      {
+        name: "Blog",
+        path: "blog",
+        element: <BlogPage/>,
+      },
+    ]
   },
   {
     name: "About Me",
     path: "about",
     element: <AboutPage/>,
+    children: [
+      {
+        name: "Hobbies",
+        path: "hobbies",
+        element: <AboutPage />
+      }
+    ]
   },
   {
     name: "Blog",
