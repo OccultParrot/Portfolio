@@ -61,3 +61,15 @@ export interface IPageProps {
   element: ReactElement;
   children?: IPageProps[];
 }
+// TODO: Finish the post properties, then start working on the blog page
+/* Each post card will have the following information:
+  - Post date / time
+  - Title
+  - Content
+  - List of images and each instance of
+ */
+// interface IPostProps {
+//   title: string;
+//   content: string;
+//
+// }
