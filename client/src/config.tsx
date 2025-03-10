@@ -7,7 +7,7 @@ import { IPageProps, ISocialProps } from './types.ts';
 import HomePage from './pages/HomePage.tsx';
 import ProjectsPage from './pages/ProjectsPage.tsx';
 
-import AboutPage from './pages/AboutPage/AboutPage.tsx';
+import AboutPage from './pages/AboutPage.tsx';
 import ResumePage from './pages/ResumePage.tsx';
 import ContactPage from './pages/ContactPage.tsx';
 
