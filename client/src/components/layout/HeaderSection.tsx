@@ -1,6 +1,9 @@
-import { IPageProps } from '../../types.ts';
 import { Link } from 'react-router-dom';
 import { ReactElement } from 'react';
+
+import { IPageProps } from '../../types.ts';
+import { isAdmin } from '../../config.tsx';
+
 
 interface IHeaderProps {
   pages: IPageProps[];
@@ -29,7 +32,7 @@ function CreateNavLink(page: IPageProps, i: number): ReactElement {
           <p className="text-gray-600 hover:text-blue-600 transition-colors">{page.name}</p>
         </Link>
         <svg
-          className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"
+          className="ml-1 w-4 h-4 invisible sm:visible transition-transform group-hover:rotate-180"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -42,7 +45,7 @@ function CreateNavLink(page: IPageProps, i: number): ReactElement {
 
       {/* Dropdown menu */}
       <ul
-        className="absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg py-1 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+        className="absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg py-1 w-48 opacity-0 invisible group-hover:opacity-100 sm:group-hover:visible transition-all duration-200">
         {page.children.map((childPage, childIndex) => (
           !childPage.isHidden && (
             <li key={childIndex}>
@@ -65,18 +68,25 @@ export default function HeaderSection(props: IHeaderProps) {
   const root: IPageProps = props.rootPage;
 
   return (
-    <header>
+    <header className="sticky top-0 z-50">
       <div
-        className="h-fit pb-4 sm:pb-0 sm:h-20 flex shadow-sm items-center justify-between w-full flex-col sm:flex-row">
+        className="h-fit pb-4 sm:pb-0 sm:h-20 flex shadow-sm items-center justify-between w-full flex-col sm:flex-row bg-white">
         <Link to={root.path}>
-          <h1 className="ml-4 text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
-            Thomas Stemler
-          </h1>
+          <div className="flex items-center justify-between group">
+            <h1 className="ml-0 sm:ml-4 text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+              Thomas Stemler
+            </h1>
+            {
+              isAdmin && (
+              <p className="ml-2 text-gray-500">│ Admin</p>
+            )
+            }
+          </div>
         </Link>
 
-        <ul className="flex flex-row items-center flex-wrap justify-around gap-x-4 mr-4">
+        <ul className="flex flex-row items-center flex-wrap justify-around gap-x-2 sm:gap-x-4 mr-0 sm:mr-4">
           {pages.map((page, i) => (
-            !page.isHidden && CreateNavLink(page, i)
+            !page.isHidden && (!page.isAdminOnly || isAdmin) && CreateNavLink(page, i)
           ))}
         </ul>
       </div>
