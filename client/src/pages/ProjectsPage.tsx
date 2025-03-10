@@ -12,18 +12,17 @@ import {IProjectCardProps} from '../types.ts';
  */
 const projects: IProjectCardProps[] = [
   {
-    title: 'Title',
-    description: 'Blah blah blah blah',
-    image: '',
-    // isFeatured: true,
+    title: 'Friends Without Benefits',
+    description: 'A fun object recognition scavenger hunt, played solo or with a friend!',
+    image: 'https://ucarecdn.com/b5bd864b-904b-401d-b1e7-4ab87c5ec3a4/Screenshot20250302172615.png',
     links: [
       {
-        displayName: 'Google',
-        href: 'https://www.google.com/'
+        displayName: "Hosted Website",
+        href: "https://friends-without-benefits.onrender.com/",
       },
       {
-        displayName: 'Youtube',
-        href: 'https://www.youtube.com/'
+        displayName: "GitHub Repository",
+        href: "https://github.com/savevsgames/friends-without-benefits"
       }
     ]
   },
