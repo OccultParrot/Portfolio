@@ -1,5 +1,6 @@
 import {ReactElement} from "react";
 
+
 /**
  * Interface defining the properties needed to populate a project card on the Projects page
  *
@@ -18,6 +19,7 @@ export interface IProjectCardProps {
   links: IProjectLink[];
 }
 
+
 /**
  * Interface defining the properties needed for a project link
  *
@@ -29,6 +31,7 @@ interface IProjectLink {
   displayName: string;
   href: string;
 }
+
 
 /**
  * Interface defining the properties for creating links to my social medias in the footer
@@ -44,6 +47,7 @@ export interface ISocialProps{
   href: string;
 }
 
+
 /**
  * Interface defining the properties for creating routes in the application.
  * Used by the CreateRoute function to generate route elements recursively.
@@ -58,18 +62,44 @@ export interface IPageProps {
   name: string;
   path: string;
   isHidden?: boolean;
+  isAdminOnly?: boolean;
   element: ReactElement;
   children?: IPageProps[];
 }
-// TODO: Finish the post properties, then start working on the blog page
-/* Each post card will have the following information:
-  - Post date / time
-  - Title
-  - Content
-  - List of images and each instance of
+
+/**
+ * Interface defining the properties needed to display a blog post in the blog page.
+ *
+ * @interface IPostProps
+ * @property {string} title - The title of the blog post
+ * @property {string} content - All the content of the blog-post in ***markdown***
+ * @property {Date} datePublished - The date the blog-post was created
+ * @property {ITag[]} tags - The list of tags concerning the blog.
  */
-// interface IPostProps {
-//   title: string;
-//   content: string;
-//
-// }
+export interface IPostProps {
+  title: string;
+  content: string;
+  datePublished: Date;
+  tags: ITag[];
+}
+
+
+/**
+ * Interface defining the properties needed for a tag on a blog post
+ *
+ * @interface ITag
+ * @property {string} name - The text that is displayed when the tag is drawn
+ * @property {string?} url - The URL that the tag links to, if null then the tag is not made a link
+ * @property {string} color - The color of background of the tag, ***USE TAILWINDCSS' COLOR SYSTEM***
+ *
+ * @example
+ * const tag: ITag = {
+ *   name: "JavaScript",
+ *   color: "gray-600"
+ * }
+ */
+interface ITag {
+  name: string;
+  url?: string;
+  color: string;
+}
