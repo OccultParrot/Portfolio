@@ -33,21 +33,21 @@ export const isAdmin: boolean = false;
  */
 export const socials: Array<ISocialProps> = [
   {
-    name: "GitHub",
+    name: 'GitHub',
     icon: GitHubLogo,
-    href: "https://github.com/OccultParrot"
+    href: 'https://github.com/OccultParrot'
   },
   {
-    name: "LinkedIn",
+    name: 'LinkedIn',
     icon: LinkedInLogo,
-    href: "https://www.linkedin.com/in/thomas-stemler-468094299/"
+    href: 'https://www.linkedin.com/in/thomas-stemler-468094299/'
   },
   {
-    name: "Dev.to",
+    name: 'Dev.to',
     icon: DevLogo,
-    href: "https://dev.to/occultparrot"
+    href: 'https://dev.to/occultparrot'
   }
-]
+];
 
 /**
  * Configuration array defining all application routes.
@@ -66,29 +66,54 @@ export const socials: Array<ISocialProps> = [
  */
 export const pages: Array<IPageProps> = [
   {
-    name: "Home",
-    path: "",
+    name: 'Home',
+    path: '',
     isHidden: true,
-    element: <HomePage/>
+    element: <HomePage />
   },
   {
-    name: "Projects",
-    path: "projects",
-    element: <ProjectsPage/>,
+    name: 'Projects',
+    path: 'projects',
+    element: <ProjectsPage />
   },
   {
-    name: "About Me",
-    path: "about",
-    element: <AboutPage/>,
+    name: 'About Me',
+    path: 'about',
+    element: <AboutPage />
   },
   {
-    name: "Contact Me",
-    path: "contact",
+    name: 'Contact Me',
+    path: 'contact',
     element: <ContactPage />
   },
   {
-    name: "Resume",
-    path: "resume",
+    name: 'Resume',
+    path: 'resume',
     element: <ResumePage />
-  },
+  }
+];
+
+
+export const languages: Array<string> = [
+  'Python',
+  'JavaScript',
+  'TypeScript',
+  'C#',
+  'C++',
+  'Java',
+  'HTML',
+  'CSS',
+  'SQL'
+];
+
+export const frameworks: Array<string> = [
+  'Node.js',
+  'PostgreSQL',
+  'React',
+  'Flask',
+  'MonoGame',
+  'PySimpleGui',
+  'tailwindcss',
+  'Express.js',
+  ''
 ];
