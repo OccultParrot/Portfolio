@@ -1,10 +1,10 @@
-import {BrowserRouter, Outlet, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { Fragment, ReactElement } from 'react';
-import {pages, socials} from './config.tsx';
-import {IPageProps} from './types.ts';
-import ErrorPage from "./pages/ErrorPage.tsx";
-import HeaderSection from "./components/layout/HeaderSection.tsx";
-import FooterSection from "./components/layout/FooterSection.tsx";
+import { pages, socials } from './config.tsx';
+import { IPageProps } from './types.ts';
+import ErrorPage from './pages/ErrorPage.tsx';
+import HeaderSection from './components/layout/HeaderSection.tsx';
+import FooterSection from './components/layout/FooterSection.tsx';
 
 
 /**
