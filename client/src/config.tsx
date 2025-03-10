@@ -2,17 +2,18 @@ import GitHubLogo from './assets/github.svg';
 import LinkedInLogo from './assets/linkedin.svg';
 import DevLogo from './assets/dev-icon.svg';
 
-import {ISocialProps, IPageProps} from './types.ts';
+import { IPageProps, ISocialProps } from './types.ts';
 
 import HomePage from './pages/HomePage.tsx';
 import ProjectsPage from './pages/ProjectsPage.tsx';
 
 import AboutPage from './pages/AboutPage/AboutPage.tsx';
-import HobbiesPage from './pages/AboutPage/HobbiesPage.tsx';
-import MusicPage from './pages/AboutPage/MusicPage.tsx';
-
-import BlogPage from './pages/BlogPage.tsx';
 import ResumePage from './pages/ResumePage.tsx';
+import ContactPage from './pages/ContactPage.tsx';
+
+
+export const isAdmin: boolean = false;
+
 
 /**
  * Configuration array defining all social media accounts connected to me.
@@ -79,27 +80,15 @@ export const pages: Array<IPageProps> = [
     name: "About Me",
     path: "about",
     element: <AboutPage/>,
-    children: [
-      {
-        name: "Hobbies",
-        path: "hobbies",
-        element: <HobbiesPage />
-      },
-      {
-        name: "Music",
-        path: "music",
-        element: <MusicPage />
-      }
-    ]
   },
   {
-    name: "Blog",
-    path: "blog",
-    element: <BlogPage/>,
+    name: "Contact Me",
+    path: "contact",
+    element: <ContactPage />
   },
   {
     name: "Resume",
     path: "resume",
     element: <ResumePage />
-  }
+  },
 ];
