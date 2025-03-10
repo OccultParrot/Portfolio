@@ -17,9 +17,10 @@ export default function FooterSection(props: IFooterProps): ReactElement {
       <div className=" mx-auto  px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <div className="flex flex-col justify-center  mb-8">
           <div className="flex flex-row content-center justify-between">
-            {socials.map((social) => (
+            {socials.map((social, i) => (
               <a href={social.href}
                  className="flex flex-col  items-center group"
+                 key={i}
                  target="_blank" rel="noopener noreferrer">
                 <img alt={social.name} className="h-8! w-8!" src={social.icon} />
                 <p
