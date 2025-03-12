@@ -128,3 +128,49 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Visual Studio specific
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.log
+*.csproj.user
+*.dbmdl
+*.jfm
+
+# NuGet packages
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+nuget.config
+NuGet.Config
+NuGetScratch/
+artifacts/
+
+# .NET Core specific
+appsettings*.json
+secrets.json
+*.deps.json
+*.runtimeconfig.json
+
+# Entity Framework
+Migrations/
+
+# Rider / JetBrains IDE
+.idea/
+*.sln.iml
+
+# Other generated files
+Generated_Code/
