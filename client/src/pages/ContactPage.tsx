@@ -30,7 +30,7 @@ export default function ContactPage() {
     // Log the form information TODO: remove this once we are sending form data to backend
     console.log(formData);
   };
-
+  console.log(isSubmitting);
   return (
     <div className="container mx-auto px-4 py-16">
       <h2 className="text-3xl font-semibold text-center text-gray-800 pb-4">
