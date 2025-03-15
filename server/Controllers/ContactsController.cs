@@ -22,14 +22,14 @@ namespace server.Controllers
 
         // GET: api/Contacts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ContactItem>>> GetContactItems()
+        public async Task<ActionResult<IEnumerable<ContactMessage>>> GetContactItems()
         {
             return await _context.ContactItems.ToListAsync();
         }
 
         // GET: api/Contacts/5
         [HttpGet("{id:long}")]
-        public async Task<ActionResult<ContactItem>> GetContactItem(long id)
+        public async Task<ActionResult<ContactMessage>> GetContactItem(long id)
         {
             var contactItem = await _context.ContactItems.FindAsync(id);
 
@@ -44,14 +44,14 @@ namespace server.Controllers
         // PUT: api/Contacts/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id:long}")]
-        public async Task<IActionResult> PutContactItem(long id, ContactItem contactItem)
+        public async Task<IActionResult> PutContactItem(long id, ContactMessage contactMessage)
         {
-            if (id != contactItem.Id)
+            if (id != contactMessage.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(contactItem).State = EntityState.Modified;
+            _context.Entry(contactMessage).State = EntityState.Modified;
 
             try
             {
@@ -75,12 +75,12 @@ namespace server.Controllers
         // POST: api/Contacts
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ContactItem>> PostContactItem(ContactItem contactItem)
+        public async Task<ActionResult<ContactMessage>> PostContactItem(ContactMessage contactMessage)
         {
-            _context.ContactItems.Add(contactItem);
+            _context.ContactItems.Add(contactMessage);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetContactItem), new { id = contactItem.Id }, contactItem);
+            return CreatedAtAction(nameof(GetContactItem), new { id = contactMessage.Id }, contactMessage);
         }
 
         // DELETE: api/Contacts/5

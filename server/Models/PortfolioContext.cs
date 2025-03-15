@@ -7,6 +7,6 @@ public class PortfolioContext: DbContext {
     
   }
 
-  public DbSet<ContactItem> ContactItems { get; set; } = null!;
-  public DbSet<ProjectItem> ProjectItems { get; set; } = null!;
+  public DbSet<ContactMessage> ContactItems { get; set; } = null!;
+  public DbSet<Project> ProjectItems { get; set; } = null!;
 }

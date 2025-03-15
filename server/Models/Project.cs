@@ -1,6 +1,6 @@
 ﻿namespace server.Models;
 
-public class ProjectItem {
+public class Project {
   public long Id { get; set; }
   public string Title { get; set; } = null!;
   public string Description { get; set; } = null!;

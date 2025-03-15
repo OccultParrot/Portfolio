@@ -11,25 +11,25 @@ namespace server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProjectItemsController : ControllerBase
+    public class ProjectsController : ControllerBase
     {
         private readonly PortfolioContext _context;
 
-        public ProjectItemsController(PortfolioContext context)
+        public ProjectsController(PortfolioContext context)
         {
             _context = context;
         }
 
         // GET: api/ProjectItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProjectItem>>> GetProjectItems()
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjectItems()
         {
             return await _context.ProjectItems.ToListAsync();
         }
 
         // GET: api/ProjectItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProjectItem>> GetProjectItem(long id)
+        public async Task<ActionResult<Project>> GetProjectItem(long id)
         {
             var projectItem = await _context.ProjectItems.FindAsync(id);
 
@@ -44,14 +44,14 @@ namespace server.Controllers
         // PUT: api/ProjectItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjectItem(long id, ProjectItem projectItem)
+        public async Task<IActionResult> PutProjectItem(long id, Project project)
         {
-            if (id != projectItem.Id)
+            if (id != project.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(projectItem).State = EntityState.Modified;
+            _context.Entry(project).State = EntityState.Modified;
 
             try
             {
@@ -75,12 +75,12 @@ namespace server.Controllers
         // POST: api/ProjectItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ProjectItem>> PostProjectItem(ProjectItem projectItem)
+        public async Task<ActionResult<Project>> PostProjectItem(Project project)
         {
-            _context.ProjectItems.Add(projectItem);
+            _context.ProjectItems.Add(project);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProjectItem", new { id = projectItem.Id }, projectItem);
+            return CreatedAtAction("GetProjectItem", new { id = project.Id }, project);
         }
 
         // DELETE: api/ProjectItems/5
