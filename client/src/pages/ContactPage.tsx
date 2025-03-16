@@ -1,5 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
+import {BackendUrl} from '../config.tsx';
+
 interface IContactForm {
   name: string;
   email: string;
@@ -23,14 +25,36 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Log the form information TODO: remove this once we are sending form data to backend
-    console.log(formData);
+    try {
+      const response = await fetch(BackendUrl + "/Contacts", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      const data = await response.json();
+
+      console.log(data);
+
+      // Once we are done submitting, set isSubmitting to false in order reflect that the submission has finished.
+      setIsSubmitting(false);
+
+      // Blank the form data
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      })
+    } catch (err) {
+      console.log(err);
+    }
+
   };
-  console.log(isSubmitting);
   return (
     <div className="container mx-auto px-4 py-16">
       <h2 className="text-3xl font-semibold text-center text-gray-800 pb-4">

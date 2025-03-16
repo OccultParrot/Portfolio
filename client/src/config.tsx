@@ -14,6 +14,8 @@ import ContactPage from './pages/ContactPage.tsx';
 
 export const isAdmin: boolean = false;
 
+export const BackendUrl: string = 'http://localhost:5296/api';
+
 
 /**
  * Configuration array defining all social media accounts connected to me.
