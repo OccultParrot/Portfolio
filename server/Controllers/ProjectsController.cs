@@ -1,8 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Threading.Tasks;
+// using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using server.Models;
@@ -11,27 +11,19 @@ namespace server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProjectsController : ControllerBase
-    {
-        private readonly PortfolioContext _context;
-
-        public ProjectsController(PortfolioContext context)
-        {
-            _context = context;
-        }
-
+    public class ProjectsController(PortfolioContext context) : ControllerBase {
         // GET: api/ProjectItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjectItems()
         {
-            return await _context.ProjectItems.ToListAsync();
+            return await context.ProjectItems.ToListAsync();
         }
 
         // GET: api/ProjectItems/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:long}")]
         public async Task<ActionResult<Project>> GetProjectItem(long id)
         {
-            var projectItem = await _context.ProjectItems.FindAsync(id);
+            var projectItem = await context.ProjectItems.FindAsync(id);
 
             if (projectItem == null)
             {
@@ -42,8 +34,8 @@ namespace server.Controllers
         }
 
         // PUT: api/ProjectItems/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        // To protect from over-posting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id:long}")]
         public async Task<IActionResult> PutProjectItem(long id, Project project)
         {
             if (id != project.Id)
@@ -51,11 +43,11 @@ namespace server.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(project).State = EntityState.Modified;
+            context.Entry(project).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -73,12 +65,12 @@ namespace server.Controllers
         }
 
         // POST: api/ProjectItems
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // To protect from over-posting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Project>> PostProjectItem(Project project)
         {
-            _context.ProjectItems.Add(project);
-            await _context.SaveChangesAsync();
+            context.ProjectItems.Add(project);
+            await context.SaveChangesAsync();
 
             return CreatedAtAction("GetProjectItem", new { id = project.Id }, project);
         }
@@ -87,21 +79,21 @@ namespace server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProjectItem(long id)
         {
-            var projectItem = await _context.ProjectItems.FindAsync(id);
+            var projectItem = await context.ProjectItems.FindAsync(id);
             if (projectItem == null)
             {
                 return NotFound();
             }
 
-            _context.ProjectItems.Remove(projectItem);
-            await _context.SaveChangesAsync();
+            context.ProjectItems.Remove(projectItem);
+            await context.SaveChangesAsync();
 
             return NoContent();
         }
 
         private bool ProjectItemExists(long id)
         {
-            return _context.ProjectItems.Any(e => e.Id == id);
+            return context.ProjectItems.Any(e => e.Id == id);
         }
     }
 }
