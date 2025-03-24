@@ -1,4 +1,4 @@
-import {ReactElement} from "react";
+import { ReactElement } from 'react';
 
 
 /**
@@ -102,4 +102,11 @@ interface ITag {
   name: string;
   url?: string;
   color: string;
+}
+
+
+export interface IMessage {
+  name: string;
+  email: string;
+  message: string;
 }

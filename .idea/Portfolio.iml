@@ -5,6 +5,10 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/client/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/server/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/server/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/server/obj" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

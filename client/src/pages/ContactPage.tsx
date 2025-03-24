@@ -1,38 +1,66 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-
-interface IContactForm {
-  name: string;
-  email: string;
-  message: string;
-}
+import { BackendUrl } from '../config.tsx';
+import { IMessage } from '../types.ts';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState<IContactForm>({
+  const [formData, setFormData] = useState<IMessage>({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Log the form information TODO: remove this once we are sending form data to backend
-    console.log(formData);
+    try {
+      // Make the API call
+      const response = await fetch(`${BackendUrl}/Contacts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      // Add a fake delay (2 seconds) to keep the "Sending..." message visible longer
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Reset form state after successful submission and delay
+      setIsSubmitting(false);
+
+      // Clear form data
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+
+    } catch (err) {
+      console.error('Error submitting form:', err);
+
+      // Add a fake delay even on error to keep the "Sending..." message visible longer
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      setIsSubmitting(false);
+    }
   };
-  console.log(isSubmitting);
+
   return (
-    <div className="container mx-auto px-4 py-16">
+    <section className="container mx-auto px-4 py-16">
       <h2 className="text-3xl font-semibold text-center text-gray-800 pb-4">
         Contact Me
       </h2>
@@ -43,7 +71,7 @@ export default function ContactPage() {
 
       <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
         <div className="space-y-6">
-          {/* The name input */}
+          {/* Name input */}
           <div>
             <label
               htmlFor="name"
@@ -63,7 +91,7 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* The email input */}
+          {/* Email input */}
           <div>
             <label
               htmlFor="email"
@@ -83,7 +111,7 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* The message text area */}
+          {/* Message textarea */}
           <div>
             <label
               htmlFor="message"
@@ -107,13 +135,14 @@ export default function ContactPage() {
           <div className="text-center">
             <button
               type="submit"
-              className={`inline-flex justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors `}
+              disabled={isSubmitting}
+              className={`inline-flex justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
