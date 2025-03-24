@@ -6,7 +6,7 @@ import { IPageProps, ISocialProps, IProjectCardProps } from './types.ts';
 
 import HomePage from './pages/HomePage.tsx';
 import ProjectsPage from './pages/ProjectsPage.tsx';
-
+import MessagesPage from './pages/MessagesPage.tsx';
 import AboutPage from './pages/AboutPage.tsx';
 import ResumePage from './pages/ResumePage.tsx';
 import ContactPage from './pages/ContactPage.tsx';
@@ -89,6 +89,12 @@ export const pages: Array<IPageProps> = [
     element: <ContactPage />
   },
   {
+    name: 'Messages',
+    path: 'messages',
+    element: <MessagesPage />,
+    isAdminOnly: true
+  },
+  {
     name: 'Resume',
     path: 'resume',
     element: <ResumePage />
@@ -105,7 +111,10 @@ export const languages: Array<string> = [
   'Java',
   'HTML',
   'CSS',
-  'SQL'
+  'SQL',
+  'Lua',
+  'PBasic',
+  'bash'
 ];
 
 export const frameworks: Array<string> = [

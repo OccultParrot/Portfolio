@@ -1,14 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { BackendUrl } from '../config.tsx';
-
-interface IContactForm {
-  name: string;
-  email: string;
-  message: string;
-}
+import { IMessage } from '../types.ts';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState<IContactForm>({
+  const [formData, setFormData] = useState<IMessage>({
     name: '',
     email: '',
     message: '',
@@ -65,7 +60,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <section className="container mx-auto px-4 py-16">
       <h2 className="text-3xl font-semibold text-center text-gray-800 pb-4">
         Contact Me
       </h2>
@@ -148,6 +143,6 @@ export default function ContactPage() {
           </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
