@@ -16,7 +16,7 @@ function CreateNavLink(page: IPageProps, i: number): ReactElement {
     return (
       <li key={i}>
         <Link to={`/${page.path}`}>
-          <p className="text-gray-600 hover:text-blue-600 transition-colors">{page.name}</p>
+          <p className="text-gray-600 hover:text-blue-600 hover:scale-115 ease-in-out transition">{page.name}</p>
         </Link>
       </li>
     );
@@ -29,7 +29,7 @@ function CreateNavLink(page: IPageProps, i: number): ReactElement {
         <Link
           to={`/${page.path}`}
         >
-          <p className="text-gray-600 hover:text-blue-600 transition-colors">{page.name}</p>
+          <p className="text-gray-600 hover:text-blue-600 hover:scale-115 ease-in-out transition">{page.name}</p>
         </Link>
         <svg
           className="ml-1 w-4 h-4 invisible sm:visible transition-transform group-hover:rotate-180"
@@ -73,7 +73,7 @@ export default function HeaderSection(props: IHeaderProps) {
         className="h-fit pb-4 sm:pb-0 sm:h-20 flex shadow-sm items-center justify-between w-full flex-col sm:flex-row bg-white">
         <Link to={root.path}>
           <div className="flex items-center justify-between group">
-            <h1 className="ml-0 sm:ml-4 text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+            <h1 className="ml-0 sm:ml-4 text-2xl font-bold text-gray-800 group-hover:text-blue-600 hover:scale-110 ease-in-out transition">
               Thomas Stemler
             </h1>
             {
