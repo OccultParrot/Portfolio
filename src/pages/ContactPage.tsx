@@ -14,6 +14,9 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [isOperationFinished, setIsOperationFinished] = useState(false);
+  const [operationState, setOperationState] = useState<"success" | "error">("error");
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -27,20 +30,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // // Make the API call
-      // const response = await fetch(`${BackendUrl}/Contacts`, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
-      //
-      // const data = await response.json();
-      // console.log(data);
-      //
-      // // Add a fake delay (2 seconds) to keep the "Sending..." message visible longer
-      // await new Promise(resolve => setTimeout(resolve, 1000));
+      // Setting the operation state
+      setOperationState("success");
 
       emailjs.init({
         publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
@@ -58,16 +49,15 @@ export default function ContactPage() {
         message: formData.message,
       }
 
-      emailjs
-        .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
-        .then(
-          () => {
-            console.log('SUCCESS!');
-          },
-          (error) => {
-            console.log('FAILED...', error.text);
-          },
-        );
+      await emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams);
+      console.log('SUCCESS!');
+
+      // Add a fake delay to mke the "Sending..." message visible longer
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      // Set success state to true
+      setIsOperationFinished(true);
+      setTimeout(() => setIsOperationFinished(false), 3000); // Hide message after 3 seconds
 
       // Reset form state after successful submission and delay
       setIsSubmitting(false);
@@ -80,10 +70,12 @@ export default function ContactPage() {
       });
 
     } catch (err) {
-      console.error('Error submitting form:', err);
+      // Setting the operation state
+      setOperationState("error");
+      console.error('Error sending email:', err);
 
       // Add a fake delay even on error to keep the "Sending..." message visible longer
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 500));
 
       setIsSubmitting(false);
     }
@@ -170,6 +162,11 @@ export default function ContactPage() {
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
+          </div>
+
+
+          <div className={`mb-4 p-3 ${operationState == "success" ? "text-green-800 bg-green-200 border border-green-400" : "text-red-800 bg-red-200 border border-red-400"}  rounded-md text-center transition opacity-${isOperationFinished ? '100' : '0'} ease-in-out duration-400`}>
+            {operationState == "success" ? (<span>Message Successfully Sent!</span>) : (<span>Error Occurred While Sending Message!</span>)}
           </div>
         </div>
       </form>
