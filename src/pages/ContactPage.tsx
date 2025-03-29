@@ -1,6 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { BackendUrl } from '../config.tsx';
+// import { BackendUrl } from '../config.tsx';
 import { IMessage } from '../types.ts';
+
+import emailjs from '@emailjs/browser';
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<IMessage>({
@@ -24,20 +27,47 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Make the API call
-      const response = await fetch(`${BackendUrl}/Contacts`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // // Make the API call
+      // const response = await fetch(`${BackendUrl}/Contacts`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
+      //
+      // const data = await response.json();
+      // console.log(data);
+      //
+      // // Add a fake delay (2 seconds) to keep the "Sending..." message visible longer
+      // await new Promise(resolve => setTimeout(resolve, 1000));
 
-      const data = await response.json();
-      console.log(data);
+      emailjs.init({
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        blockHeadless: true,
+        limitRate: {
+          id: 'app',
+          throttle: 1000,
+        }
+      })
 
-      // Add a fake delay (2 seconds) to keep the "Sending..." message visible longer
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        time: new Date().toLocaleString(),
+        message: formData.message,
+      }
+
+      emailjs
+        .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
+        .then(
+          () => {
+            console.log('SUCCESS!');
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
 
       // Reset form state after successful submission and delay
       setIsSubmitting(false);
