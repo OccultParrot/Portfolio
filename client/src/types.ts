@@ -104,9 +104,46 @@ interface ITag {
   color: string;
 }
 
-
+/**
+ * Interface defining the properties needed for the contact form
+ *
+ * @interface IMessage
+ * @property {string} name - The name of the person sending the message
+ * @property {string} email - The email of the person sending the message
+ * @property {string} message - The message that the person is sending
+ *
+ * @example
+ * const message: IMessage = {
+ *   name: "John Doe",
+ *   email: "johndoe@gmail.com",
+ *   message: "Hello, I would like to know more about your projects."
+ * }
+ */
 export interface IMessage {
   name: string;
   email: string;
   message: string;
+}
+
+/**
+ * Interface defining the properties needed for the experience section of the about me section.
+ *
+ * @property {string} name - The displayed name for the language / framework
+ * @property {string} icon - The icon of the language / framework
+ * @property {string} level - The "level" of the language / framework, such as frontend, backend, database
+ * @property {string} type - The type of the experience, like language or framework.
+ *
+ * @example
+ * const experience: IExperience = {
+ *    name: "JavaScript",
+ *    icon: "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000",
+ *    level: ["frontend", "backend"],
+ *    type: "language"
+ * }
+ */
+export interface IExperience {
+  name: string;
+  icon: string;
+  level?: Array<"frontend" | "backend" | "database">;
+  type: "language" | "framework" | "technology";
 }
