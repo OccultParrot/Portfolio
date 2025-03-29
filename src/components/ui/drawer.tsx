@@ -1,5 +1,5 @@
 import { Drawer as ChakraDrawer, Portal } from "@chakra-ui/react"
-import { CloseButton } from "./close-button"
+import { CloseButton } from "./close-button.tsx"
 import * as React from "react"
 
 interface DrawerContentProps extends ChakraDrawer.ContentProps {
