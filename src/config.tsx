@@ -161,6 +161,7 @@ export const experience: Array<IExperience> = [
     name: "SQL",
     type: "language",
     icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sql_data_base_with_logo.svg/640px-Sql_data_base_with_logo.svg.png",
+    level: ["database"]
   },
   {
     name: "Lua",
@@ -219,6 +220,18 @@ export const experience: Array<IExperience> = [
     type: "framework",
     icon: "https://upload.wikimedia.org/wikipedia/commons/e/e6/MonoGame_Logo.svg",
   },
+  {
+    name: "Mongoose",
+    type: "framework",
+    icon: "",
+    level: ["backend"]
+  },
+  {
+    name: "Sequelize",
+    type: "framework",
+    icon: "",
+    level: ["backend"]
+  },
 
   // Technologies
   {
@@ -238,6 +251,17 @@ export const experience: Array<IExperience> = [
     type: "technology",
     icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cib-jetbrains_%28CoreUI_Icons_v1.0.0%29.svg/240px-Cib-jetbrains_%28CoreUI_Icons_v1.0.0%29.svg.png",
   },
+  {
+    name: "MongoDB",
+    type: "Technology",
+    icon: "",
+    level: ["database"]
+  },
+  {
+    name: "PostgreSQL",
+    type: "technology",
+    icon: "",
+    level: ["database"]
 ]
 
 /**
