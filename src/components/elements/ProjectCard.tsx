@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import {IProjectCardProps} from '../../types.ts';
+import {IProjectCardProps} from '../../../types.ts';
 
 
 export default function ProjectCard(props: IProjectCardProps) {

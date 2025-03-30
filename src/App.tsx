@@ -1,7 +1,7 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { Fragment, ReactElement } from 'react';
-import { pages, socials } from './config.tsx';
-import { IPageProps } from './types.ts';
+import { pages} from './pages.tsx';
+import { IPageProps } from '../types.ts';
 import ErrorPage from './pages/ErrorPage.tsx';
 import HeaderSection from './components/layout/HeaderSection.tsx';
 import FooterSection from './components/layout/FooterSection.tsx';
@@ -23,7 +23,7 @@ function Layout(): ReactElement {
       <main className="grow bg-white">
         <Outlet/>
       </main>
-      <FooterSection socials={socials}/>
+      <FooterSection/>
     </div>
   );
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "GitHub",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png",
+    "href": "https://github.com/OccultParrot"
+  },
+  {
+    "name": "LinkedIn",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Linkedin-png-linkedin-icon-1600.png/640px-Linkedin-png-linkedin-icon-1600.png",
+    "href": "https://www.linkedin.com/in/thomas-stemler-468094299/"
+  },
+  {
+    "name": "Dev.to",
+    "icon": "https://img.icons8.com/?size=100&id=Sf2NuZRCVuaE&format=png&color=000000",
+    "href": "https://dev.to/occultparrot"
+  }
+]

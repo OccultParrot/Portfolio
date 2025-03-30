@@ -1,8 +1,10 @@
 // import React from 'react';
 import Logo from '../assets/Logo.svg';
+
+import experienceConfig from '../configs/experience.json';
 import { Link } from 'react-router-dom';
-import { experience } from '../config.tsx';
-import { IExperience } from '../types.ts';
+// import { experience } from '../pages.tsx';
+import { IExperience } from '../../types.ts';
 import { ReactElement } from 'react';
 
 /**
@@ -33,6 +35,9 @@ const ExperienceItem = ({ displayName, icon }: { displayName: string, icon: stri
  * @returns {JSX.Element} - The rendered HomePage component
  */
 export default function HomePage(): ReactElement {
+  // Importing experience from the config file
+  const experience: IExperience[] = experienceConfig as IExperience[];
+
   // Group experiences by type and level, sorting them alphabetically
   const languages = experience
     .filter((e: IExperience) => e.type === 'language')

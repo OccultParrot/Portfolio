@@ -1,8 +1,11 @@
 import ProjectCard from '../components/elements/ProjectCard.tsx';
-import {projects} from '../config.tsx';
+import {IProjectCardProps} from "../../types.ts";
+import projectsConfig from '../configs/projects.json';
 
 
 export default function ProjectsPage() {
+  // Importing projects from the config file
+  const projects: IProjectCardProps[] = projectsConfig as IProjectCardProps[];
   const featuredProjects = projects.filter((project) => !!project.isFeatured);
   const regularProjects = projects.filter((project) => !project.isFeatured);
 

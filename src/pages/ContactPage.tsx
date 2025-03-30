@@ -1,6 +1,6 @@
 import {ChangeEvent, FormEvent, useState} from 'react';
-// import { BackendUrl } from '../config.tsx';
-import {IMessage} from '../types.ts';
+// import { BackendUrl } from '../pages.tsx';
+import {IMessage} from '../../types.ts';
 
 import emailjs from '@emailjs/browser';
 

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ReactElement } from 'react';
 
-import { IPageProps } from '../../types.ts';
-import { isAdmin } from '../../config.tsx';
+import { IPageProps } from '../../../types.ts';
 
 
 interface IHeaderProps {
@@ -76,17 +75,12 @@ export default function HeaderSection(props: IHeaderProps) {
             <h1 className="ml-0 sm:ml-4 text-2xl font-bold text-gray-800 group-hover:text-blue-600 hover:scale-110 ease-in-out transition">
               Thomas Stemler
             </h1>
-            {
-              isAdmin && (
-              <p className="ml-2 text-gray-500">│ Admin</p>
-            )
-            }
           </div>
         </Link>
 
         <ul className="flex flex-row items-center flex-wrap justify-around gap-x-2 sm:gap-x-4 mr-0 sm:mr-4">
           {pages.map((page, i) => (
-            !page.isHidden && (!page.isAdminOnly || isAdmin) && CreateNavLink(page, i)
+            !page.isHidden && CreateNavLink(page, i)
           ))}
         </ul>
       </div>
