@@ -1,6 +1,6 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import {ChangeEvent, FormEvent, useState} from 'react';
 // import { BackendUrl } from '../config.tsx';
-import { IMessage } from '../types.ts';
+import {IMessage} from '../types.ts';
 
 import emailjs from '@emailjs/browser';
 
@@ -18,7 +18,7 @@ export default function ContactPage() {
   const [operationState, setOperationState] = useState<"success" | "error">("error");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -165,8 +165,10 @@ export default function ContactPage() {
           </div>
 
 
-          <div className={`mb-4 p-3 ${operationState == "success" ? "text-green-800 bg-green-200 border border-green-400" : "text-red-800 bg-red-200 border border-red-400"}  rounded-md text-center transition opacity-${isOperationFinished ? '100' : '0'} ease-in-out duration-400`}>
-            {operationState == "success" ? (<span>Message Successfully Sent!</span>) : (<span>Error Occurred While Sending Message!</span>)}
+          <div
+            className={`mb-4 p-3 ${operationState == "success" ? "text-green-800 bg-green-200 border border-green-400" : "text-red-800 bg-red-200 border border-red-400"}  rounded-md text-center transition opacity-${isOperationFinished ? '100' : '0'} ease-in-out duration-400`}>
+            {operationState == "success" ? (<span>Message Successfully Sent!</span>) : (
+              <span>Error Occurred While Sending Message!</span>)}
           </div>
         </div>
       </form>
