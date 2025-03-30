@@ -262,6 +262,7 @@ export const experience: Array<IExperience> = [
     type: "technology",
     icon: "",
     level: ["database"]
+  }
 ]
 
 /**
