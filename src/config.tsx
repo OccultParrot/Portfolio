@@ -253,7 +253,7 @@ export const experience: Array<IExperience> = [
   },
   {
     name: "MongoDB",
-    type: "Technology",
+    type: "technology",
     icon: "",
     level: ["database"]
   },
