@@ -1,6 +1,6 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { Fragment, ReactElement } from 'react';
-import { pages } from './configs/pages.tsx';
+import { typeScriptConfigs } from './configs/typeScriptConfigs.tsx';
 import { IPageProps } from '../types.ts';
 import ErrorPage from './pages/ErrorPage.tsx';
 import HeaderSection from './components/layout/HeaderSection.tsx';
@@ -18,9 +18,9 @@ function Layout(): ReactElement {
 
 	return (
 		<div className="flex min-h-screen flex-col">
-			<HeaderSection pages={ pages.filter(( page ) => {
+			<HeaderSection pages={ typeScriptConfigs.filter(( page ) => {
 				return !page.isHidden
-			}) } rootPage={ pages[0] }/>
+			}) } rootPage={ typeScriptConfigs[0] }/>
 
 			<main className="grow bg-white">
 				<Outlet/>
@@ -42,7 +42,7 @@ function Layout(): ReactElement {
  * Routes structure:
  * - "/" (Layout wrapper)
  *   - "/" (index) -> Landing page
- *   - Dynamic routes from pages array
+ *   - Dynamic routes from typeScriptConfigs array
  *   - "*" -> ErrorPage page for unmatched routes
  */
 export default function App(): ReactElement {
@@ -51,10 +51,10 @@ export default function App(): ReactElement {
 			<Routes>
 				<Route path="/" element={ <Layout/> }>
 					{/* The "index" page is the one that gets served when you have a blank path */ }
-					<Route index element={ pages[0].element }/>
+					<Route index element={ typeScriptConfigs[0].element }/>
 
 					{/* Flatten all routes */ }
-					{ pages.slice(1).map(( pageProps: IPageProps ) => {
+					{ typeScriptConfigs.slice(1).map(( pageProps: IPageProps ) => {
 						if (!pageProps.children) {
 							return <Route key={ pageProps.path } path={ pageProps.path } element={ pageProps.element }/>;
 						}

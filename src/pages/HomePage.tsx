@@ -3,7 +3,7 @@ import Logo from '../assets/Logo.svg';
 
 import experienceConfig from '../configs/experience.json';
 import { Link } from 'react-router-dom';
-// import { experience } from '../pages.tsx';
+// import { experience } from '../typeScriptConfigs.tsx';
 import { IExperience } from '../../types.ts';
 import { ReactElement } from 'react';
 

@@ -23,7 +23,7 @@ import DevToIcon from '../assets/dev-icon.svg';
  *   children: [] // optional nested routes
  * }
  */
-export const pages: Array<IPageProps> = [
+export const typeScriptConfigs: Array<IPageProps> = [
 	{
 		name: 'Home',
 		path: '',

@@ -1,9 +1,7 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
-import { socials } from "../../configs/pages.tsx";
-
-import { ISocialProps } from '../../../types.ts';
+import { socials } from "../../configs/typeScriptConfigs.tsx";
 
 
 export default function FooterSection(): ReactElement {

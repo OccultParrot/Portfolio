@@ -21,7 +21,7 @@ function CreateNavLink( page: IPageProps, i: number ): ReactElement {
 		);
 	}
 
-	// For pages with children, create a dropdown menu
+	// For typeScriptConfigs with children, create a dropdown menu
 	return (
 		<li key={ i } className="relative group">
 			<div className="flex cursor-pointer items-center text-gray-600 transition-colors hover:text-blue-600">
