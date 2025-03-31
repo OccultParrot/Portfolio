@@ -18,10 +18,17 @@ const ExperienceItem = ( { displayName, icon }: { displayName: string, icon: str
 		<div
 			className="m-2 flex select-none items-center rounded-lg border border-gray-100 bg-white p-3 shadow-md transition-all duration-300 hover:translate-y-1 hover:shadow-lg"
 		>
-			<div className="mr-3 flex items-center justify-center rounded-md bg-gray-50 p-2"
-			     style={ { width: '48px', height: '48px' } }>
-				<img src={ icon } alt={ displayName } className="max-h-full max-w-full object-contain"/>
-			</div>
+
+			{
+				icon !== "" ?
+					(
+						<div className="mr-3 flex items-center justify-center rounded-md bg-gray-50 p-2"
+						     style={ { width: '48px', height: '48px' } }>
+							<img src={ icon } alt={ displayName } className="max-h-full max-w-full object-contain"/>
+						</div>
+					) : null
+			}
+
 			<span className="font-medium text-gray-800">{ displayName }</span>
 		</div>
 	);
@@ -80,7 +87,7 @@ export default function HomePage(): ReactElement {
 						problems.
 					</p>
 
-					<div className="mt-16 flex flex-col gap-4 text-center">
+					<div className="mt-16 flex flex-col sm:flex-row gap-4 text-center justify-center">
 						{/* Contact Me Button */ }
 						<Link to="/contact">
 							<button
@@ -95,11 +102,19 @@ export default function HomePage(): ReactElement {
 						<Link to="/projects">
 							<button
 								type="button"
-								className="inline-flex transform justify-center rounded-md border border-transparent bg-gray-700 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:scale-105 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+								className="inline-flex transform justify-center rounded-md border border-transparent bg-blue-800 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:scale-105 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
 							>
 								View My Projects
 							</button>
 						</Link>
+
+						{/* View My GitHub Button */ }
+						<a href="https://github.com/OccultParrot" target="_blank" rel="noopener noreferrer">
+							<button
+								className="inline-flex transform justify-center rounded-md border border-transparent bg-blue-950 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:scale-105 hover:bg-blue-950">View
+								My GitHub
+							</button>
+						</a>
 					</div>
 				</div>
 			</div>
