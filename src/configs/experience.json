@@ -135,7 +135,7 @@
   {
     "name": "Mongoose",
     "type": "framework",
-    "icon": "",
+    "icon": "https://avatars.githubusercontent.com/u/7552965?s=280&v=4",
     "level": [
       "backend"
     ]
@@ -143,7 +143,7 @@
   {
     "name": "Sequelize",
     "type": "framework",
-    "icon": "",
+    "icon": "https://static-00.iconduck.com/assets.00/sequelize-plain-icon-1771x2048-t3blqed5.png",
     "level": [
       "backend"
     ]
@@ -172,7 +172,7 @@
   {
     "name": "MongoDB",
     "type": "technology",
-    "icon": "",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mongodb-icon.svg/640px-Mongodb-icon.svg.png",
     "level": [
       "database"
     ]
@@ -180,7 +180,7 @@
   {
     "name": "PostgreSQL",
     "type": "technology",
-    "icon": "",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/640px-Postgresql_elephant.svg.png",
     "level": [
       "database"
     ]
