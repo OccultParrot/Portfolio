@@ -18,7 +18,7 @@ export default function ProjectCard( props: IProjectCardProps ) {
 				<img
 					src={ props.image }
 					alt={ `Example of ${ props.title }` }
-					className="w-full h-full object-cover"
+					className="h-full w-full object-cover"
 				/>
 				{ props.isFeatured && (
 					<span
@@ -44,7 +44,7 @@ export default function ProjectCard( props: IProjectCardProps ) {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<p className="text-gray-600 hover:text-blue-600 transition-colors">
+							<p className="text-gray-600 transition-colors hover:text-blue-600">
 								{ link.displayName }
 							</p>
 						</Link>

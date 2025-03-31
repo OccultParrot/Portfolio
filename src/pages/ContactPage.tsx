@@ -83,21 +83,21 @@ export default function ContactPage() {
 
 	return (
 		<section className="container mx-auto px-4 py-16">
-			<h2 className="text-3xl font-semibold text-center text-gray-800 pb-4">
+			<h2 className="pb-4 text-center text-3xl font-semibold text-gray-800">
 				Contact Me
 			</h2>
-			<p className="text-gray-600 text-lg text-center mb-12">
+			<p className="mb-12 text-center text-lg text-gray-600">
 				Feel free to reach out! I'm always open to new opportunities and
 				collaborations.
 			</p>
 
-			<form className="max-w-lg mx-auto" onSubmit={ handleSubmit }>
+			<form className="mx-auto max-w-lg" onSubmit={ handleSubmit }>
 				<div className="space-y-6">
 					{/* Name input */ }
 					<div>
 						<label
 							htmlFor="name"
-							className="block text-sm font-medium text-gray-700 mb-1"
+							className="mb-1 block text-sm font-medium text-gray-700"
 						>
 							Name
 						</label>
@@ -108,7 +108,7 @@ export default function ContactPage() {
 							value={ formData.name }
 							onChange={ handleChange }
 							placeholder="Your name"
-							className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm hover:ring-blue-500 hover:border-blue-500 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 transition-all duration-300 ease-in-out outline-none"
+							className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm outline-none transition-all duration-300 ease-in-out placeholder-gray-400 hover:border-blue-500 hover:ring-blue-500 focus:border-blue-500 focus:ring-blue-500"
 							required
 						/>
 					</div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
 					<div>
 						<label
 							htmlFor="email"
-							className="block text-sm font-medium text-gray-700 mb-1"
+							className="mb-1 block text-sm font-medium text-gray-700"
 						>
 							Email
 						</label>
@@ -128,7 +128,7 @@ export default function ContactPage() {
 							value={ formData.email }
 							onChange={ handleChange }
 							placeholder="your.email@example.com"
-							className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm hover:ring-blue-500 hover:border-blue-500 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 transition-all duration-300 ease-in-out outline-none"
+							className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm outline-none transition-all duration-300 ease-in-out placeholder-gray-400 hover:border-blue-500 hover:ring-blue-500 focus:border-blue-500 focus:ring-blue-500"
 							required
 						/>
 					</div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
 					<div>
 						<label
 							htmlFor="message"
-							className="block text-sm font-medium text-gray-700 mb-1"
+							className="mb-1 block text-sm font-medium text-gray-700"
 						>
 							Message
 						</label>
@@ -148,7 +148,7 @@ export default function ContactPage() {
 							onChange={ handleChange }
 							rows={ 4 }
 							placeholder="Your message"
-							className="w-full resize-none px-4 py-2 border border-gray-300 rounded-md shadow-sm hover:ring-blue-500 hover:border-blue-500 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 transition-all duration-300 ease-in-out outline-none"
+							className="w-full resize-none rounded-md border border-gray-300 px-4 py-2 shadow-sm outline-none transition-all duration-300 ease-in-out placeholder-gray-400 hover:border-blue-500 hover:ring-blue-500 focus:border-blue-500 focus:ring-blue-500"
 							required
 						></textarea>
 					</div>

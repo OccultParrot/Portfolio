@@ -17,7 +17,7 @@ import FooterSection from './components/layout/FooterSection.tsx';
 function Layout(): ReactElement {
 
 	return (
-		<div className="min-h-screen flex flex-col">
+		<div className="flex min-h-screen flex-col">
 			<HeaderSection pages={ pages.filter(( page ) => {
 				return !page.isHidden
 			}) } rootPage={ pages[0] }/>

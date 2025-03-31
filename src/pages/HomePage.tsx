@@ -16,11 +16,11 @@ import { ReactElement } from 'react';
 const ExperienceItem = ( { displayName, icon }: { displayName: string, icon: string } ) => {
 	return (
 		<div
-			className="flex items-center bg-white shadow-md rounded-lg p-3 m-2 select-none transition-all duration-300 hover:shadow-lg hover:translate-y-1 border border-gray-100"
+			className="m-2 flex select-none items-center rounded-lg border border-gray-100 bg-white p-3 shadow-md transition-all duration-300 hover:translate-y-1 hover:shadow-lg"
 		>
-			<div className="bg-gray-50 p-2 rounded-md mr-3 flex items-center justify-center"
+			<div className="mr-3 flex items-center justify-center rounded-md bg-gray-50 p-2"
 			     style={ { width: '48px', height: '48px' } }>
-				<img src={ icon } alt={ displayName } className="max-w-full max-h-full object-contain"/>
+				<img src={ icon } alt={ displayName } className="max-h-full max-w-full object-contain"/>
 			</div>
 			<span className="font-medium text-gray-800">{ displayName }</span>
 		</div>
@@ -55,37 +55,37 @@ export default function HomePage(): ReactElement {
 	const allLevels: Array<'frontend' | 'backend' | 'database'> = ['frontend', 'backend', 'database'];
 
 	return (
-		<div className="flex flex-col items-center w-full">
-			<div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row items-center gap-8">
+		<div className="flex w-full flex-col items-center">
+			<div className="container mx-auto flex flex-col items-center gap-8 px-4 py-16 lg:flex-row">
 				<div className="w-1/4 lg:w-1/3">
 					{/* My logo. When you hover, it rotates and scales up slightly*/ }
 					<img
 						src={ Logo }
 						alt="Logo"
 						loading="lazy"
-						className="w-full h-auto transform hover:scale-105 hover:rotate-12 transition-transform ease-in-out duration-300"
+						className="h-auto w-full transform transition-transform duration-300 ease-in-out hover:rotate-12 hover:scale-105"
 					/>
 				</div>
 
 				<div className="w-full lg:w-2/3">
-					<h2 className="text-3xl font-bold leading-tight mb-4 text-gray-800">
+					<h2 className="mb-4 text-3xl font-bold leading-tight text-gray-800">
 						Thomas Stemler
 					</h2>
-					<p className="text-gray-600 text-lg mb-6 italic">Full Stack Developer</p>
+					<p className="mb-6 text-lg italic text-gray-600">Full Stack Developer</p>
 
-					<p className="text-gray-600 text-lg leading-relaxed mb-8">
+					<p className="mb-8 text-lg leading-relaxed text-gray-600">
 						As a passionate Full Stack Developer, I bring ideas to life through
 						code. With expertise in both frontend and backend technologies, I
 						create seamless, user-friendly applications that solve real-world
 						problems.
 					</p>
 
-					<div className="mt-16 text-center flex flex-col gap-4">
+					<div className="mt-16 flex flex-col gap-4 text-center">
 						{/* Contact Me Button */ }
 						<Link to="/contact">
 							<button
 								type="button"
-								className="inline-flex justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all transform hover:scale-105"
+								className="inline-flex transform justify-center rounded-md border border-transparent bg-blue-600 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:scale-105 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 							>
 								Contact Me
 							</button>
@@ -95,7 +95,7 @@ export default function HomePage(): ReactElement {
 						<Link to="/projects">
 							<button
 								type="button"
-								className="inline-flex justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-700 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all transform hover:scale-105"
+								className="inline-flex transform justify-center rounded-md border border-transparent bg-gray-700 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:scale-105 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
 							>
 								View My Projects
 							</button>
@@ -105,11 +105,11 @@ export default function HomePage(): ReactElement {
 			</div>
 
 			<div className="container mx-auto px-4 py-12">
-				<div className="bg-gray-50 rounded-xl p-8 w-full max-w-5xl shadow-lg mx-auto">
-					<div className="text-center mb-10">
+				<div className="mx-auto w-full max-w-5xl rounded-xl bg-gray-50 p-8 shadow-lg">
+					<div className="mb-10 text-center">
 						<h2 className="text-3xl font-bold text-gray-800">Skills & Expertise</h2>
-						<div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-						<p className="text-gray-600 mt-4">Technologies I work with professionally</p>
+						<div className="mx-auto mt-4 h-1 w-24 rounded-full bg-blue-500"></div>
+						<p className="mt-4 text-gray-600">Technologies I work with professionally</p>
 					</div>
 
 					{/* Stack Section */ }
@@ -125,9 +125,9 @@ export default function HomePage(): ReactElement {
 
 							return (
 								<div key={ level } className="mb-10">
-									<div className="flex items-center mb-6">
-										<div className="w-2 h-12 bg-blue-500 rounded-r-full mr-4"></div>
-										<h3 className="text-2xl font-bold text-gray-800 capitalize">{ level } Stack</h3>
+									<div className="mb-6 flex items-center">
+										<div className="mr-4 h-12 w-2 rounded-r-full bg-blue-500"></div>
+										<h3 className="text-2xl font-bold capitalize text-gray-800">{ level } Stack</h3>
 									</div>
 									<div className="flex flex-wrap">
 										{ levelItems.map(item => (
@@ -146,8 +146,8 @@ export default function HomePage(): ReactElement {
 					{/* Languages Section */ }
 					{ languages.length > 0 && (
 						<div className="mb-10">
-							<div className="flex items-center mb-6">
-								<div className="w-2 h-12 bg-green-500 rounded-r-full mr-4"></div>
+							<div className="mb-6 flex items-center">
+								<div className="mr-4 h-12 w-2 rounded-r-full bg-green-500"></div>
 								<h3 className="text-2xl font-bold text-gray-800">Languages</h3>
 							</div>
 							<div className="flex flex-wrap">
@@ -165,8 +165,8 @@ export default function HomePage(): ReactElement {
 					{/* Frameworks Section */ }
 					{ frameworks.length > 0 && (
 						<div className="mb-10">
-							<div className="flex items-center mb-6">
-								<div className="w-2 h-12 bg-purple-500 rounded-r-full mr-4"></div>
+							<div className="mb-6 flex items-center">
+								<div className="mr-4 h-12 w-2 rounded-r-full bg-purple-500"></div>
 								<h3 className="text-2xl font-bold text-gray-800">Frameworks</h3>
 							</div>
 							<div className="flex flex-wrap">
@@ -184,8 +184,8 @@ export default function HomePage(): ReactElement {
 					{/* Technologies Section */ }
 					{ technologies.length > 0 && (
 						<div>
-							<div className="flex items-center mb-6">
-								<div className="w-2 h-12 bg-yellow-500 rounded-r-full mr-4"></div>
+							<div className="mb-6 flex items-center">
+								<div className="mr-4 h-12 w-2 rounded-r-full bg-yellow-500"></div>
 								<h3 className="text-2xl font-bold text-gray-800">Tools & Technologies</h3>
 							</div>
 							<div className="flex flex-wrap">

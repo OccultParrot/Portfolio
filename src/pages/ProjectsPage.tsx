@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 				<h3 className="text-xl font-semibold mb-6! text-gray-700">
 					Other Projects
 				</h3>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+				<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
 					{ regularProjects.map(( project ) => (
 						<ProjectCard key={ project.title } { ...project } />
 					)) }
