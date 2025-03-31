@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
-import socialsConfig from '../../configs/socials.json';
+import { socials } from "../../configs/pages.tsx";
 
 import { ISocialProps } from '../../../types.ts';
 
@@ -9,7 +9,6 @@ import { ISocialProps } from '../../../types.ts';
 export default function FooterSection(): ReactElement {
 	const currentYear = new Date().getFullYear();
 	// Importing socials from the config file
-	const socials: ISocialProps[] = socialsConfig as ISocialProps[];
 
 	return (
 		<footer className="bg-gray-800 pt-4!">

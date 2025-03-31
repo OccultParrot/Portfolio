@@ -1,8 +1,12 @@
-import { IPageProps } from '../../types.ts';
+import { IPageProps, ISocialProps } from '../../types.ts';
 
 import HomePage from '../pages/HomePage.tsx';
 import ProjectsPage from '../pages/ProjectsPage.tsx';
 import ContactPage from '../pages/ContactPage.tsx';
+
+import GitHubIcon from '../assets/github.svg';
+import LinkedInIcon from '../assets/linkedin.svg';
+import DevToIcon from '../assets/dev-icon.svg';
 
 /**
  * Configuration array defining all application routes.
@@ -37,3 +41,21 @@ export const pages: Array<IPageProps> = [
 		element: <ContactPage/>
 	},
 ];
+
+export const socials: ISocialProps[] = [
+	{
+		name: 'GitHub',
+		icon: GitHubIcon,
+		href: 'https://github.com/OccultParrot'
+	},
+	{
+		name: "LinkedIn",
+		icon: LinkedInIcon,
+		href: "https://www.linkedin.com/in/thomas-stemler-468094299/"
+	},
+	{
+		name: "Dev.to",
+		icon: DevToIcon,
+		href: "https://dev.to/occultparrot"
+	}
+]
