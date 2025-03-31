@@ -1,6 +1,6 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { Fragment, ReactElement } from 'react';
-import { pages} from './pages.tsx';
+import { pages } from './configs/pages.tsx';
 import { IPageProps } from '../types.ts';
 import ErrorPage from './pages/ErrorPage.tsx';
 import HeaderSection from './components/layout/HeaderSection.tsx';
@@ -16,16 +16,18 @@ import FooterSection from './components/layout/FooterSection.tsx';
  */
 function Layout(): ReactElement {
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <HeaderSection pages={pages.filter((page) => {return !page.isHidden})} rootPage={pages[0]}/>
+	return (
+		<div className="min-h-screen flex flex-col">
+			<HeaderSection pages={ pages.filter(( page ) => {
+				return !page.isHidden
+			}) } rootPage={ pages[0] }/>
 
-      <main className="grow bg-white">
-        <Outlet/>
-      </main>
-      <FooterSection/>
-    </div>
-  );
+			<main className="grow bg-white">
+				<Outlet/>
+			</main>
+			<FooterSection/>
+		</div>
+	);
 }
 
 
@@ -44,37 +46,37 @@ function Layout(): ReactElement {
  *   - "*" -> ErrorPage page for unmatched routes
  */
 export default function App(): ReactElement {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          {/* The "index" page is the one that gets served when you have a blank path */}
-          <Route index element={pages[0].element}/>
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={ <Layout/> }>
+					{/* The "index" page is the one that gets served when you have a blank path */ }
+					<Route index element={ pages[0].element }/>
 
-          {/* Flatten all routes */}
-          {pages.slice(1).map((pageProps: IPageProps) => {
-            if (!pageProps.children) {
-              return <Route key={pageProps.path} path={pageProps.path} element={pageProps.element} />;
-            }
+					{/* Flatten all routes */ }
+					{ pages.slice(1).map(( pageProps: IPageProps ) => {
+						if (!pageProps.children) {
+							return <Route key={ pageProps.path } path={ pageProps.path } element={ pageProps.element }/>;
+						}
 
-            return (
-              <Fragment key={pageProps.path}>
-                <Route path={pageProps.path} element={pageProps.element} />
-                {pageProps.children.map((childProps) => (
-                  <Route
-                    key={`${pageProps.path}/${childProps.path}`}
-                    path={`${pageProps.path}/${childProps.path}`}
-                    element={childProps.element}
-                  />
-                ))}
-              </Fragment>
-            );
-          })}
+						return (
+							<Fragment key={ pageProps.path }>
+								<Route path={ pageProps.path } element={ pageProps.element }/>
+								{ pageProps.children.map(( childProps ) => (
+									<Route
+										key={ `${ pageProps.path }/${ childProps.path }` }
+										path={ `${ pageProps.path }/${ childProps.path }` }
+										element={ childProps.element }
+									/>
+								)) }
+							</Fragment>
+						);
+					}) }
 
-          {/* The error page gets served if the path the user goes to does not exist. */}
-          <Route path="*" element={<ErrorPage/>}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+					{/* The error page gets served if the path the user goes to does not exist. */ }
+					<Route path="*" element={ <ErrorPage/> }/>
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }

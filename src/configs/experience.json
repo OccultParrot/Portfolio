@@ -3,25 +3,35 @@
     "name": "Python",
     "type": "language",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "JavaScript",
     "type": "language",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png",
-    "level": ["frontend", "backend"]
+    "level": [
+      "frontend",
+      "backend"
+    ]
   },
   {
     "name": "TypeScript",
     "type": "language",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
-    "level": ["frontend", "backend"]
+    "level": [
+      "frontend",
+      "backend"
+    ]
   },
   {
     "name": "C#",
     "type": "language",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "C++",
@@ -37,19 +47,25 @@
     "name": "HTML",
     "type": "language",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
-    "level": ["frontend"]
+    "level": [
+      "frontend"
+    ]
   },
   {
     "name": "CSS",
     "type": "language",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Official_CSS_Logo.svg",
-    "level": ["frontend"]
+    "level": [
+      "frontend"
+    ]
   },
   {
     "name": "SQL",
     "type": "language",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sql_data_base_with_logo.svg/640px-Sql_data_base_with_logo.svg.png",
-    "level": ["database"]
+    "level": [
+      "database"
+    ]
   },
   {
     "name": "Lua",
@@ -75,31 +91,41 @@
     "name": "React",
     "type": "framework",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png",
-    "level": ["frontend"]
+    "level": [
+      "frontend"
+    ]
   },
   {
     "name": "TailwindCSS",
     "type": "framework",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/640px-Tailwind_CSS_Logo.svg.png",
-    "level": ["frontend"]
+    "level": [
+      "frontend"
+    ]
   },
   {
     "name": "Express.js",
     "type": "framework",
     "icon": "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "ASP.NET",
     "type": "framework",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "Flask",
     "type": "framework",
     "icon": "https://img.icons8.com/?size=100&id=MHcMYTljfKOr&format=png&color=000000",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "MonoGame",
@@ -110,25 +136,33 @@
     "name": "Mongoose",
     "type": "framework",
     "icon": "",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "Sequelize",
     "type": "framework",
     "icon": "",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "Vite",
     "type": "technology",
     "icon": "https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png&color=000000",
-    "level": ["frontend"]
+    "level": [
+      "frontend"
+    ]
   },
   {
     "name": "Node.js",
     "type": "technology",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
-    "level": ["backend"]
+    "level": [
+      "backend"
+    ]
   },
   {
     "name": "JetBrains IDEs",
@@ -139,12 +173,16 @@
     "name": "MongoDB",
     "type": "technology",
     "icon": "",
-    "level": ["database"]
+    "level": [
+      "database"
+    ]
   },
   {
     "name": "PostgreSQL",
     "type": "technology",
     "icon": "",
-    "level": ["database"]
+    "level": [
+      "database"
+    ]
   }
 ]
