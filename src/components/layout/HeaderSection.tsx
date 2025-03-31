@@ -83,6 +83,12 @@ export default function HeaderSection( props: IHeaderProps ) {
 					{ pages.map(( page, i ) => (
 						!page.isHidden && CreateNavLink(page, i)
 					)) }
+
+					<li key="resumme">
+						<a href="/Resume.pdf" download>
+							<p className="text-gray-600 transition ease-in-out hover:scale-115 hover:text-blue-600">Resume</p>
+						</a>
+					</li>
 				</ul>
 			</div>
 			<br/>
