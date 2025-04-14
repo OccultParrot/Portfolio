@@ -3,6 +3,7 @@
     "title": "Friends Without Benefits",
     "description": "A fun object recognition scavenger hunt, played solo or with a friend!",
     "image": "https://ucarecdn.com/b5bd864b-904b-401d-b1e7-4ab87c5ec3a4/Screenshot20250302172615.png",
+    "isFeatured": true,
     "links": [
       {
         "displayName": "Hosted Website",
@@ -11,6 +12,28 @@
       {
         "displayName": "GitHub Repository",
         "href": "https://github.com/savevsgames/friends-without-benefits"
+      }
+    ]
+  },
+  {
+    "title": "Hoof Track",
+    "description": "A farrier scheduling application that assists farriers with scheduling and managing their appointments.",
+    "image": "https://ucarecdn.com/3772c2a4-61f3-4efb-8c13-9c60c223f4f3/Screenshot20250413231704.png",
+    "links": [
+      {
+        "displayName": "GitHub Repository",
+        "href": "https://github.com/OccultParrot/hoof-track"
+      }
+    ]
+  },
+  {
+    "title": "Missouri S & T Internship Project",
+    "description": "The code I wrote to program a microcontroller in order to study how well people can count rapidly occurring stimuli",
+    "image": "https://cdn.discordapp.com/attachments/1051000842305679381/1361193877612007494/20250413_231816.jpg?ex=67fdde16&is=67fc8c96&hm=6efdeb43d57d2d7e987c46a58073aff85c180e6797945a5cd55c15df63a5bad7&",
+    "links": [
+      {
+        "displayName": "GitHub Repository",
+        "href": "https://github.com/OccultParrot/StimuliTesting"
       }
     ]
   }
