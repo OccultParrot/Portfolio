@@ -81,10 +81,7 @@ export default function HomePage(): ReactElement {
 					<p className="mb-6 text-lg italic text-gray-600">Full Stack Developer</p>
 
 					<p className="mb-8 text-lg leading-relaxed text-gray-600">
-						As a passionate Full Stack Developer, I bring ideas to life through
-						code. With expertise in both frontend and backend technologies, I
-						create seamless, user-friendly applications that solve real-world
-						problems.
+						I'm a software developer who loves figuring out how to make things! With 6 years of experience in software development and 1 year focusing on web technologies, I enjoy making cool projects and useful tools.
 					</p>
 
 					<div className="mt-16 flex flex-col sm:flex-row gap-4 text-center justify-center">
