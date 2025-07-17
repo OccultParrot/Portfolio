@@ -40,7 +40,7 @@
   {
 	"title": "Pixel Planet Generator",
 	"description": "A procedural planet generator with a cool pixelart aesthetic.",
-	"image": "https://github.com/OccultParrot/pixel-planet/blob/main/assets/Screenshot%202025-07-16%20223937.png",
+	"image": "https://raw.githubusercontent.com/OccultParrot/pixel-planet/refs/heads/main/assets/Screenshot%202025-07-16%20223937.png",
 	"links": [
 		{
 			"displayName": "GitHub Repository",
