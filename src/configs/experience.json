@@ -96,6 +96,14 @@
     ]
   },
   {
+    "name": "React Native",
+    "type": "framework",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png",
+    "level": [
+      "frontend"
+    ]
+  },
+  {
     "name": "TailwindCSS",
     "type": "framework",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/640px-Tailwind_CSS_Logo.svg.png",
