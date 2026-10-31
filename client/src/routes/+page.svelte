@@ -95,8 +95,8 @@
 		{
 			name: 'Portfolio',
 			description: 'My portfolio, its gone through a lot of changes over the years.',
-			languages: ['Typescript'],
-			frameworks: ['Svelte'],
+			languages: ['Typescript', 'SQL', 'Rust'],
+			frameworks: ['Svelte', 'Axum'],
 			url: [
 				{ name: 'Site', url: 'https://stemler.dev' },
 				{ name: 'Github Repo', url: 'https://github.com/OccultParrot/Portfolio' }
