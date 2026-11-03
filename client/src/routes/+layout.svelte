@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Potfolio</title>
 </svelte:head>
 
 {@render children()}

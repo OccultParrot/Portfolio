@@ -174,12 +174,12 @@
 
 <!-- Front Splash -->
 <div
-	class="flex min-h-dvh w-full flex-col items-center justify-center bg-[url(/assets/background.jpg)] bg-cover bg-center px-4 md:bg-fixed"
+	class="flex min-h-dvh w-full flex-col items-center justify-center bg-[url(/assets/background.jpg)] bg-cover bg-center px-4 md:bg-fixed border-b-4 border-green-700"
 >
 	<div
 		class="flex w-full max-w-md flex-col items-center justify-center rounded-2xl bg-white/10 p-4 py-6 backdrop-blur-md lg:w-1/3 lg:max-w-xl"
 	>
-		<h1 class="font-serif text-2xl sm:text-3xl">Thomas Stemler</h1>
+		<h1 class="font-serif text-green-900 text-2xl sm:text-3xl">Thomas Stemler</h1>
 		<!-- Dividing line -->
 		<div class="m-2 w-1/3 border-t-2"></div>
 
@@ -197,14 +197,14 @@
 			>
 				Github
 			</a>
-			<p class="select-none">●</p>
+			<p class="select-none text-green-900">●</p>
 			<a
 				href="https://blog.stemler.dev"
 				class="transition-all duration-200 hover:scale-110 hover:text-green-900"
 			>
 				Blog
 			</a>
-			<p class="select-none">●</p>
+			<p class="select-none text-green-900">●</p>
 			<a
 				href="https://parrotsphotos.com"
 				class="transition-all duration-200 hover:scale-110 hover:text-green-900"
