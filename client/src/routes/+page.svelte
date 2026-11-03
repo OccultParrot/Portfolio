@@ -179,7 +179,7 @@
 	<div
 		class="flex w-full max-w-md flex-col items-center justify-center rounded-2xl bg-white/10 p-4 py-6 backdrop-blur-md lg:w-1/3 lg:max-w-xl"
 	>
-		<h1 class="font-serif text-green-900 text-2xl sm:text-3xl">Thomas Stemler</h1>
+		<h1 class="font-serif text-black text-2xl sm:text-3xl">Thomas Stemler</h1>
 		<!-- Dividing line -->
 		<div class="m-2 w-1/3 border-t-2"></div>
 
